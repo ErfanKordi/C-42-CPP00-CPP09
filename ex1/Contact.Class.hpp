@@ -1,5 +1,5 @@
 #ifndef Contact_Class_hpp
-# define Contact_Class_hpp
+#define Contact_Class_hpp
 #include <iostream>
 #include <iomanip>
 
@@ -12,7 +12,7 @@ private:
 	std::string _nickname;
 	std::string _darkestSecret;
 
-	int			_index;
+	int _index;
 
 	std::string _getInput(std::string str) const;
 
@@ -21,9 +21,7 @@ public:
 	~Contact();
 	void fillOutForm(void);
 	void changeIndex(int i);
-	void view(int index) const;
-
+	void view(int index, bool fullView) const;
 };
-
 
 #endif

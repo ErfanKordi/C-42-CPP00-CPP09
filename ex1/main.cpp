@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.Class.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 13:25:30 by ekordi            #+#    #+#             */
-/*   Updated: 2024/01/15 15:34:29 by ekordi           ###   ########.fr       */
+/*   Created: 2024/01/15 14:31:29 by ekordi            #+#    #+#             */
+/*   Updated: 2024/01/15 15:34:23 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Phonebook_Class_hpp
-#define Phonebook_Class_hpp
 #include "Contact.Class.hpp"
+#include "Phonebook.Class.hpp"
 
-class Phonebook
+int main()
 {
-private:
-	Contact _contacts[8];
-
-public:
-	Phonebook();
-	~Phonebook();
-	void welcome(void) const;
-	void addContact(void);
-	void printBook(void) const;
-	void search(void) const;
-};
-
-#endif
+	Phonebook book;
+	std::string input;
+	bool exit = false;
+	book.welcome();
+	while (!exit)
+	{
+		std::cout << "> ";
+		getline(std::cin, input);
+		if (input.compare("ADD") == 0)
+			book.addContact();
+		if (input.compare("SEARCH") == 0)
+		{
+			book.printBook();
+			book.search();
+		}
+		if (input.compare("EXIT") == 0)
+			exit = true;
+	}
+	return 0;
+}
