@@ -23,7 +23,6 @@ Contact::~Contact()
 std::string Contact::_getInput(std::string str) const
 {
 	std::string input;
-	bool valid = false;
 
 	while (42)
 	{

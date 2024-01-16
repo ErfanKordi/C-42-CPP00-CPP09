@@ -1,14 +1,14 @@
-NAME		= PhoneBook
+NAME		= AccountManager
 
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror
+FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
 OBJDIR = .objFiles
 
-SRC			= main.cpp Contact.cpp Phonebook.cpp
+SRC			= tests.cpp Account.cpp
 OBJ			= $(SRC:%.cpp=$(OBJDIR)/%.o)
-HEADER		= Contact.Class.hpp Phonebook.Class.hpp
+HEADER		= Account.hpp
 
 .PHONY: all clean fclean re bonus norm
 

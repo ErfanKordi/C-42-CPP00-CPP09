@@ -6,7 +6,7 @@
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:31:20 by ekordi            #+#    #+#             */
-/*   Updated: 2024/01/15 15:34:19 by ekordi           ###   ########.fr       */
+/*   Updated: 2024/01/15 16:54:57 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void Phonebook::printBook(void) const
 void Phonebook::search() const
 {
 	int input;
-	bool valid = false;
 	while (42)
 	{
 		std::cout << "Please enter the contact index: " << std::flush;
