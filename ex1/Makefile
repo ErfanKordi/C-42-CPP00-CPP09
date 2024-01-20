@@ -16,6 +16,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
 	@$(CC) $(OBJ) -o $(NAME)
+	@printf "Executable ready.\n"
+
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
@@ -23,8 +25,11 @@ $(OBJDIR)/%.o: %.cpp $(HEADER)
 
 clean:
 	@$(RM) $(OBJDIR) $(OBJ)
+	@printf "Object files removed.\n"
 
 fclean: clean
 	@$(RM) $(NAME)
+	@printf "All clean.\n"
+
 
 re: fclean all

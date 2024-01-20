@@ -1,14 +1,14 @@
-NAME		= AccountManager
+NAME		= Megaphone
 
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
 
 OBJDIR = .objFiles
 
-SRC			= tests.cpp Account.cpp
+SRC			= Megaphone.cpp
 OBJ			= $(SRC:%.cpp=$(OBJDIR)/%.o)
-HEADER		= Account.hpp
+HEADER		=
 
 .PHONY: all clean fclean re bonus norm
 
@@ -29,5 +29,6 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@printf "All clean.\n"
+
 
 re: fclean all
