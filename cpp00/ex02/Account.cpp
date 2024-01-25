@@ -6,7 +6,7 @@
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:28:02 by ekordi            #+#    #+#             */
-/*   Updated: 2024/01/16 13:15:36 by ekordi           ###   ########.fr       */
+/*   Updated: 2024/01/23 17:20:54 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ bool Account::makeWithdrawal(int withdrawal)
 	_nbWithdrawals++;
 	std::cout << ";withdrawal:" << withdrawal;
 	std::cout << ";amount:" << _amount;
-	std::cout << ";nb+withdrawals:" << _nbWithdrawals << std::endl;
+	std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return true;
 }
 int Account::checkAmount(void) const

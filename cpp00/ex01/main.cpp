@@ -6,7 +6,7 @@
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:31:29 by ekordi            #+#    #+#             */
-/*   Updated: 2024/01/15 15:34:23 by ekordi           ###   ########.fr       */
+/*   Updated: 2024/01/23 17:16:39 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int main()
 	while (!exit)
 	{
 		std::cout << "> ";
-		getline(std::cin, input);
+		std::cin >> input;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (input.compare("ADD") == 0)
 			book.addContact();
 		if (input.compare("SEARCH") == 0)
