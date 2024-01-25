@@ -69,7 +69,11 @@
 		"utility": "cpp",
 		"vector": "cpp",
 		"contact.class.hpp": "c",
-		"phonebook.class.hpp": "c"
+		"phonebook.class.hpp": "c",
+		"__verbose_abort": "cpp",
+		"charconv": "cpp",
+		"clocale": "cpp",
+		"variant": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "enabled"
 }
