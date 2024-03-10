@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.Class.hpp                                :+:      :+:    :+:   */
+/*   main.ccp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 13:25:30 by ekordi            #+#    #+#             */
-/*   Updated: 2024/01/15 15:34:29 by ekordi           ###   ########.fr       */
+/*   Created: 2024/03/10 13:54:10 by ekordi            #+#    #+#             */
+/*   Updated: 2024/03/10 13:54:10 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Phonebook_Class_hpp
-#define Phonebook_Class_hpp
-#include "Contact.Class.hpp"
+#include "Fixed.hpp"
 
-class Phonebook
+int main(void)
 {
-private:
-	Contact _contacts[8];
+	fixed a;
+	fixed b(a);
+	fixed c;
 
-public:
-	Phonebook();
-	~Phonebook();
-	void welcome(void) const;
-	void addContact(void);
-	void printBook(void) const;
-	void search(void) const;
-};
+	c = b;
 
-#endif
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+
+	return 0;
+}

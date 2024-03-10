@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.Class.hpp                                :+:      :+:    :+:   */
+/*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 13:25:30 by ekordi            #+#    #+#             */
-/*   Updated: 2024/01/15 15:34:29 by ekordi           ###   ########.fr       */
+/*   Created: 2024/03/10 12:42:03 by ekordi            #+#    #+#             */
+/*   Updated: 2024/03/10 12:42:03 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Phonebook_Class_hpp
-#define Phonebook_Class_hpp
-#include "Contact.Class.hpp"
+#include <iostream>
 
-class Phonebook
+class fixed
 {
 private:
-	Contact _contacts[8];
+	int _fixedPointNum;
+	static const int FIXED_POINT_BASE = 8;
 
 public:
-	Phonebook();
-	~Phonebook();
-	void welcome(void) const;
-	void addContact(void);
-	void printBook(void) const;
-	void search(void) const;
-};
+	fixed();
+	fixed(const fixed &a);
+	~fixed();
+	fixed &operator=(const fixed &b);
 
-#endif
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+};

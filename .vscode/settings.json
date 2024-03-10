@@ -73,7 +73,8 @@
 		"__verbose_abort": "cpp",
 		"charconv": "cpp",
 		"clocale": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"fixed.hpp": "c"
 	},
 	"C_Cpp.errorSquiggles": "enabled"
 }
