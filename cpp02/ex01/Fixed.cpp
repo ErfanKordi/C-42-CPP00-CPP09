@@ -16,6 +16,7 @@ Fixed::Fixed() : _numBits(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
+
 Fixed::Fixed(const Fixed &a)
 {
 	std::cout << "Copy constructor called" << std::endl;
@@ -43,4 +44,33 @@ void Fixed::setRawBits(int const raw)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+//ex01
+
+Fixed::Fixed(const int intNum)
+{
+	std::cout << "Default constructor called" << std::endl;
+	this->_numBits = (intNum << _bits);
+}
+Fixed::Fixed(const float fNum)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->_numBits = std::roundf(fNum * (1 << Fixed::_bits));
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->_numBits / (float)(1 << _bits));
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->_numBits >> Fixed::_bits);
+}
+
+std::ostream	&operator<<(std::ostream &stream, Fixed const &f)
+{
+	stream << f.toFloat();
+	return (stream);
 }

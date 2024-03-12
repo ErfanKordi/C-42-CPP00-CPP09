@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
 private:
 	int _numBits;
-	static const int Fixed_POINT_BASE = 8;
+	static const int _bits = 8;
 
 public:
 	Fixed();
-	Fixed(const Fixed &a);
+	Fixed(const Fixed &f);
+	Fixed(const int intNum);
+	Fixed(const float fNum);
 	~Fixed();
+
+	float toFloat(void) const;
+	int toInt(void) const;
+
 	Fixed &operator=(const Fixed &b);
 
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 };
+
+std::ostream &operator<<(std::ostream &stream, Fixed const &f);
+
+#endif
