@@ -6,7 +6,7 @@
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:34:33 by ekordi            #+#    #+#             */
-/*   Updated: 2024/03/12 18:13:42 by ekordi           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:11:40 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@
 class ClapTrap
 {
 private:
-	std::string _Name;
-	int			_HitPoints;
-	int			_EnergyPoints;
-	int			_AtackDamage;
+	std::string _name;
+	int			_hitPoints;
+	int			_energyPoints;
+	int			_atackDamage;
 
 public:
 	ClapTrap();
 	ClapTrap(std::string Name);
 	~ClapTrap();
 
-	int GetAtackDamage();
-	int Get();
+	int getAtackDamage();
+
+	ClapTrap &operator=(ClapTrap const &ClapTrap);
 
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
@@ -35,3 +36,4 @@ public:
 };
 
 
+// std::ostream	&operator<<(std::ostream &stream, ClapTrap &clapTrap2);

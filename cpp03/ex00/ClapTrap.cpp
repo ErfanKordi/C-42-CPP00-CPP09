@@ -6,23 +6,23 @@
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:34:36 by ekordi            #+#    #+#             */
-/*   Updated: 2024/03/12 18:23:03 by ekordi           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:12:18 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _Name(),
-					   _HitPoints(10),
-					   _EnergyPoints(10),
-					   _AtackDamage(0)
+ClapTrap::ClapTrap() : _name(),
+					   _hitPoints(10),
+					   _energyPoints(10),
+					   _atackDamage(0)
 {
 	std::cout << "ClapTrap created." << std::endl;
 }
-ClapTrap::ClapTrap(std::string Name) : _Name(Name),
-									   _HitPoints(10),
-									   _EnergyPoints(10),
-									   _AtackDamage(0)
+ClapTrap::ClapTrap(std::string Name) : _name(Name),
+									   _hitPoints(10),
+									   _energyPoints(10),
+									   _atackDamage(2)
 {
 	std::cout << "ClapTrap " << Name << " created." << std::endl;
 }
@@ -32,21 +32,42 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap destroyed." << std::endl;
 }
 
-int ClapTrap::GetAtackDamage()
+ClapTrap &ClapTrap::operator=(ClapTrap const &ClapTrap)
 {
-	return (this->_AtackDamage);
+	std::cout << "CLAPTRAP assignation operator called" << std::endl;
+	this->_name = ClapTrap._name;
+	this->_hitPoints = ClapTrap._hitPoints;
+	this->_energyPoints = ClapTrap._energyPoints;
+	this->_atackDamage = ClapTrap._atackDamage;
+	return (*this);
+}
+
+int ClapTrap::getAtackDamage()
+{
+	return (this->_atackDamage);
 }
 void ClapTrap::attack(std::string const &target)
 {
-	std::cout << _Name << " atacked " << target << " cuasing "
-	<< GetAtackDamage() << " damage points."<< std::endl;
-	_EnergyPoints -= 1;
+	std::cout << _name << " atacked " << target << " cuasing "
+			  << getAtackDamage() << " damage points." << std::endl;
+	_energyPoints -= 1;
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << _Name << " took " << amount << " damage points." << std::endl;
-	_HitPoints -= amount;
+	std::cout << _name << " took " << amount << " damage points." << std::endl;
+	_hitPoints -= amount;
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	std::cout << _name << " repaired it self and recieved " << amount
+			  << " point." << std::endl;
+	_hitPoints += amount;
 }
+// std::ostream	&operator<<(std::ostream &stream, ClapTrap &clapTrap)
+// {
+// 	stream << "Name: " << clapTrap.getName() << \
+// 	" Hitpoints: " << clapTrap.getHitpoints() << \
+// 	" Energy Points: " << clapTrap.getEnergyPoints() << \
+// 	" Attack Damage: " << clapTrap.getAttackDamage();
+// 	return (stream);
+// }
