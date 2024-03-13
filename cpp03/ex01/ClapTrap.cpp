@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : _name(),
 					   _energyPoints(10),
 					   _atackDamage(0)
 {
-	std::cout << "ClapTrap" << _name << " created." << std::endl;
+	std::cout << "ClapTrap created." << std::endl;
 }
 ClapTrap::ClapTrap(std::string const &Name) : _name(Name),
 											  _hitPoints(10),
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(std::string const &Name) : _name(Name),
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << _name << " destroyed." << std::endl;
+	std::cout << "ClapTrap destroyed." << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &ClapTrap)

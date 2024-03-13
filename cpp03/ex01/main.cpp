@@ -10,30 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
 
-	ClapTrap claptrapA("ClaptrapA");
-	ClapTrap claptrapB("ClaptrapB");
+	ScavTrap ScavTrapA("ScavTrapA");
+	ScavTrap ScavTrapB("ScavTrapB");
 
 	std::cout << std::endl;
 
-	claptrapA.announce();
-	claptrapB.announce();
-	claptrapA.attack("ClaptrapB");
-	claptrapB.takeDamage(claptrapA.getAtackDamage());
+	ScavTrapA.announce();
+	ScavTrapB.announce();
+	ScavTrapA.attack("ScavtrapB");
+	ScavTrapB.takeDamage(ScavTrapA.getAtackDamage());
 
 	std::cout << std::endl;
-	claptrapA.announce();
-	claptrapB.announce();
+	ScavTrapA.announce();
+	ScavTrapB.announce();
 
-	claptrapB.beRepaired(5);
+	ScavTrapB.beRepaired(5);
 
 	std::cout << std::endl;
+	ScavTrapB.guardGate();
 
-	claptrapA.announce();
-	claptrapB.announce();
+	ScavTrapA.announce();
+	ScavTrapB.announce();
 	return (0);
 }

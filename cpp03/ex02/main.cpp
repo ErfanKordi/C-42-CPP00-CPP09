@@ -10,30 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
 
-	ClapTrap claptrapA("ClaptrapA");
-	ClapTrap claptrapB("ClaptrapB");
+	FragTrap FragTrapA("FragTrapA");
+	FragTrap FragTrapB("FragTrapB");
 
 	std::cout << std::endl;
 
-	claptrapA.announce();
-	claptrapB.announce();
-	claptrapA.attack("ClaptrapB");
-	claptrapB.takeDamage(claptrapA.getAtackDamage());
+	FragTrapA.announce();
+	FragTrapB.announce();
+	FragTrapA.attack("FragTrapB");
+	FragTrapB.takeDamage(FragTrapA.getAtackDamage());
 
 	std::cout << std::endl;
-	claptrapA.announce();
-	claptrapB.announce();
+	FragTrapA.announce();
+	FragTrapB.announce();
 
-	claptrapB.beRepaired(5);
+	FragTrapB.beRepaired(5);
 
 	std::cout << std::endl;
+	FragTrapB.highFiveGuys();
 
-	claptrapA.announce();
-	claptrapB.announce();
+	FragTrapA.announce();
+	FragTrapB.announce();
 	return (0);
 }

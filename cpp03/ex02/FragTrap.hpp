@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekordi <ekordi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 16:48:08 by prossi            #+#    #+#             */
-/*   Updated: 2024/03/12 19:12:53 by ekordi           ###   ########.fr       */
+/*   Created: 2024/03/13 13:31:33 by ekordi            #+#    #+#             */
+/*   Updated: 2024/03/13 13:31:33 by ekordi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HP
+#define FRAGTRAP_HP
+
 #include "ClapTrap.hpp"
+#include <iostream>
+#include <iomanip>
 
-int main()
+class FragTrap : public ClapTrap
 {
+public:
+	FragTrap();
+	FragTrap(std::string const &name);
+	~FragTrap();
 
-	ClapTrap claptrapA("ClaptrapA");
-	ClapTrap claptrapB("ClaptrapB");
+	void highFiveGuys(void);
+};
 
-	std::cout << std::endl;
-
-	claptrapA.announce();
-	claptrapB.announce();
-	claptrapA.attack("ClaptrapB");
-	claptrapB.takeDamage(claptrapA.getAtackDamage());
-
-	std::cout << std::endl;
-	claptrapA.announce();
-	claptrapB.announce();
-
-	claptrapB.beRepaired(5);
-
-	std::cout << std::endl;
-
-	claptrapA.announce();
-	claptrapB.announce();
-	return (0);
-}
+#endif

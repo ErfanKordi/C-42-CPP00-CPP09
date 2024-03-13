@@ -1,4 +1,4 @@
-NAME		= rawbits
+NAME		= FragTrap
 
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,9 +6,9 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-SRC			= main.cpp Fixed.cpp
+SRC			= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ			= $(SRC:%.cpp=$(OBJDIR)/%.o)
-HEADER		= Fixed.hpp
+HEADER		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 .PHONY: all clean fclean re bonus norm
 
