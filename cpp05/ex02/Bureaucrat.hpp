@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Form; // Forward declaration
 
@@ -41,6 +41,7 @@ public:
     void incrementGrade(void);
     void decrementGrade(void);
     int signForm(Form &form) const;
+    void executeForm(Form &form) const;
 };
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &obj);
