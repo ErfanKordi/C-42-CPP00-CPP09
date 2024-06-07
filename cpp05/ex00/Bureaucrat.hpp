@@ -27,7 +27,7 @@ public:
 	std::string getName(void) const;
 	int getGrade(void) const;
 
-	void inceamentGrade(void);
+	void increamentGrade(void);
 	void decreaseGrade(void);
 };
 

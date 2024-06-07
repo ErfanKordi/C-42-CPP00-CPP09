@@ -4,47 +4,44 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
-class Bureaucrat; // Forward declaration
+class Bureaucrat;
 
 class Form
 {
 private:
-    const std::string _name;
-    bool _isSigned;
-    int _gradeToSign;
-    int _gradeToExecute;
+	const std::string _name;
+	bool _isSigned;
+	int _gradeToSign;
+	int _gradeToExecute;
 
 public:
-    Form();                                                      // Default constructor
-    Form(std::string name, int gradeToSign, int gradeToExecute); // Parameterized constructor
-    Form(Form const &src);                                       // Copy constructor
-    ~Form();                                                     // Destructor
-    Form &operator=(Form const &other);                          // Assignment operator
+	Form();
+	Form(std::string name, int gradeToSign, int gradeToExecute);
+	Form(Form const &src);
+	~Form();
+	Form &operator=(Form const &other);
 
-    virtual void action() const = 0;
-    // Exceptions
-    class GradeTooHighException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
-    class GradeTooLowException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
+	virtual void action() const = 0;
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
 
-    // Getters
-    std::string getName() const;
-    bool getIsSigned() const;
-    int getGradeToSign() const;
-    int getGradeToExecute() const;
+	std::string getName() const;
+	bool getIsSigned() const;
+	int getGradeToSign() const;
+	int getGradeToExecute() const;
 
-    // Methods
-    void beSigned(Bureaucrat const &bureaucrat); // Sign the form
-    void execute(Bureaucrat const &executor);
+	void beSigned(Bureaucrat const &bureaucrat);
+	void execute(Bureaucrat const &executor);
 };
 
 std::ostream &operator<<(std::ostream &o, Form const &obj);
 
-#endif // FORM_HPP
+#endif

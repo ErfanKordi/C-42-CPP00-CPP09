@@ -6,7 +6,7 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-SRC			= main.cpp Bureaucrat.cpp Bureaucrat.hpp
+SRC			= main.cpp Bureaucrat.cpp
 OBJ			= $(SRC:%.cpp=$(OBJDIR)/%.o)
 HEADER		= Bureaucrat.hpp
 

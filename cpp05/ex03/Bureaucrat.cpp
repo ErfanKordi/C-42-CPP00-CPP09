@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 Bureaucrat::Bureaucrat(void) : _name("spy"), _grade(150)
 {
-	std::cout << "Bureaucrat default constructor called" << std::endl;
+	std::cout << "Bureaucrat default constructor called-> " << this->getName() << std::endl;
 }
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
@@ -10,12 +10,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade = grade;
-	std::cout << "Bureaucrat constructor called" << std::endl;
+	std::cout << "Bureaucrat constructor called-> " << this->getName() << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name)
 {
-	std::cout << "Bureaucrat copy constructor called" << std::endl;
+	std::cout << "Bureaucrat copy constructor called-> " << this->getName() << std::endl;
 	*this = other;
 }
 
@@ -31,7 +31,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructor called" << std::endl;
+	std::cout << "Bureaucrat destructor called-> " << this->getName() << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
@@ -95,6 +95,6 @@ void Bureaucrat::executeForm(Form &form) const
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << this->getName() << e.what() << '\n';
+		std::cerr << e.what() << " for " << this->getName() << '\n';
 	}
 }

@@ -4,18 +4,19 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 int main(void)
-{    try
+{
+	try
 	{
-        ShrubberyCreationForm SCF("home");
-        Bureaucrat b1("Bob", 1);
-        Bureaucrat b2("Jhon", 1);
-        SCF.beSigned(b2);
-        b1.executeForm(SCF);
+		ShrubberyCreationForm form("home");
+		Bureaucrat b1("Erfan", 1);
+		Bureaucrat b2("Ali", 138);
+		form.beSigned(b2);
+		b1.executeForm(form);
+		b2.executeForm(form);
+	}
 
-        b2.executeForm(SCF);
-    }
-
-	catch (std::exception & e) {
-        std::cout << "Exception: " << e.what() << std::endl;
-    }
+	catch (std::exception &e)
+	{
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
 }

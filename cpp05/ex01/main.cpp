@@ -23,5 +23,4 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-
 }

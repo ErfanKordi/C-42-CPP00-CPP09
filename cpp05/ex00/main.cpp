@@ -5,7 +5,7 @@ int main(void)
 	try
 	{
 		Bureaucrat mo("mo", 1);
-		mo.inceamentGrade();
+		mo.increamentGrade();
 		std::cout << mo << std::endl;
 	}
 	catch (const Bureaucrat::GradeTooHighException &e)

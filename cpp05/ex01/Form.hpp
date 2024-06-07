@@ -4,45 +4,41 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
-class Bureaucrat; // Forward declaration
+class Bureaucrat;
 
 class Form
 {
 private:
-    const std::string _name;
-    bool _isSigned;
-    int _gradeToSign;
-    int _gradeToExecute;
+	const std::string _name;
+	bool _isSigned;
+	int _gradeToSign;
+	int _gradeToExecute;
 
 public:
-    Form(); // Default constructor
-    Form(std::string name, int gradeToSign, int gradeToExecute); // Parameterized constructor
-    Form(Form const &src); // Copy constructor
-    ~Form(); // Destructor
-    Form &operator=(Form const &other); // Assignment operator
+	Form();
+	Form(std::string name, int gradeToSign, int gradeToExecute);
+	Form(Form const &src);
+	~Form();
+	Form &operator=(Form const &other);
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
 
-    // Exceptions
-    class GradeTooHighException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
-    class GradeTooLowException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
+	std::string getName() const;
+	bool getIsSigned() const;
+	int getGradeToSign() const;
+	int getGradeToExecute() const;
 
-    // Getters
-    std::string getName() const;
-    bool getIsSigned() const;
-    int getGradeToSign() const;
-    int getGradeToExecute() const;
-
-    // Methods
-    void beSigned(Bureaucrat const &bureaucrat); // Sign the form
+	void beSigned(Bureaucrat const &bureaucrat);
 };
 
 std::ostream &operator<<(std::ostream &o, Form const &obj);
 
-#endif // FORM_HPP
+#endif

@@ -24,7 +24,7 @@ $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJDIR)
+	@$(RM) $(OBJDIR) 
 	@printf "Object files removed.\n"
 
 fclean: clean
