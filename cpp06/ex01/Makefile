@@ -1,4 +1,4 @@
-NAME        = convert
+NAME        = Serialization
 
 CC          = c++
 FLAGS       = -Wall -Wextra -Werror -std=c++98
@@ -6,8 +6,8 @@ RM          = rm -rf
 
 OBJDIR      = .objFiles
 
-SRC         = main.cpp ScalarConverter.cpp
-HEADER      = ScalarConverter.hpp
+SRC         = main.cpp Serialization.cpp
+HEADER      = Serialization.hpp Data.hpp
 
 OBJ         = $(SRC:%.cpp=$(OBJDIR)/%.o)
 
