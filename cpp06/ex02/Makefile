@@ -1,4 +1,4 @@
-NAME        = serialization
+NAME        = base
 
 CC          = c++
 FLAGS       = -Wall -Wextra -Werror -std=c++98
@@ -6,8 +6,8 @@ RM          = rm -rf
 
 OBJDIR      = .objFiles
 
-SRC         = main.cpp Serialization.cpp
-HEADER      = Serialization.hpp Data.hpp
+SRC         = main.cpp
+HEADER      = A.hpp B.hpp C.hpp base.hpp
 
 OBJ         = $(SRC:%.cpp=$(OBJDIR)/%.o)
 
