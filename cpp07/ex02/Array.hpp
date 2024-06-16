@@ -23,4 +23,5 @@ public:
 	const T &operator[] (unsigned int index) const;
 };
 
+
 #endif // ARRAY_HPP

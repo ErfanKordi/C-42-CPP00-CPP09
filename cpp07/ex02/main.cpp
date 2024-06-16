@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Array.hpp"
+#include "Array.tpp"
 
 int main() {
     // Create an array of integers with size 5

@@ -1,24 +1,27 @@
 NAME        = Array
+
 CC          = c++
 FLAGS       = -Wall -Wextra -Werror -std=c++98
 RM          = rm -rf
+
 OBJDIR      = .objFiles
-SRC         = main.cpp Array.cpp
+
+SRC         = main.cpp
 HEADER      = Array.hpp
+
 OBJ         = $(SRC:%.cpp=$(OBJDIR)/%.o)
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ) | $(OBJDIR)
+$(NAME): $(OBJ) $(HEADER)
 	@$(CC) $(OBJ) -o $(NAME)
+	@printf "Executable ready.\n"
 
-$(OBJDIR)/%.o: %.cpp $(HEADER) | $(OBJDIR)
+$(OBJDIR)/%.o: %.cpp $(HEADER)
+	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) -c $< -o $@
-
-$(OBJDIR):
-	@mkdir -p $(OBJDIR)
 
 clean:
 	@$(RM) $(OBJDIR)
@@ -26,6 +29,6 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "Executable removed.\n"
+	@printf "Executable and object files removed.\n"
 
 re: fclean all
